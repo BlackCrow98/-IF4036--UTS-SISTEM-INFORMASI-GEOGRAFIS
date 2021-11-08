@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UTS SIG</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      #map {
+        width: 1520px;
+        height: 600px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>PETA RUMAH TERHADAP SPBU TERDEKAT</h1>
+    <div id="map"></div>
+    <script src="bandarlampung.geojson.js" type="text/javascript"></script>
+    <script>
+      var map = L.map("map", {
+        center: [-5.402260306764181, 105.28435564764864, 5],
+        zoom: 14,
+      });
+
+      var Home = L.marker([-5.402260306764181, 105.28435564764864, 5])
+        .bindPopup("Home")
+        .addTo(map);
+      var SPBU1 = L.marker([-5.403131914245987, 105.28165835978605, 5])
+        .bindPopup("SPBU.1")
+        .addTo(map);
+      var SPBU2 = L.marker([-5.396545720153045, 105.28916790578009, 5])
+        .bindPopup("SPBU.2")
+        .addTo(map);
+      var SPBU3 = L.marker([-5.406632655076136, 105.27447661138869, 5])
+        .bindPopup("SPBU.3")
+        .addTo(map);
+      var SPBU4 = L.marker([-5.390976691514329, 105.27858374129283, 5])
+        .bindPopup("SPBU.4")
+        .addTo(map);
+      var SPBU5 = L.marker([-5.388067567397749, 105.28825894348665, 5])
+        .bindPopup("SPBU.5")
+        .addTo(map);
+      var SPBU6 = L.marker([-5.3845098141761225, 105.26944424507303, 5])
+        .bindPopup("SPBU.6")
+        .addTo(map);
+      var SPBU7 = L.marker([-5.37992405278656, 105.26954224654085, 5])
+        .bindPopup("SPBU.7")
+        .addTo(map);
+      var SPBU8 = L.marker([-5.420635582591092, 105.27100494110525, 5])
+        .bindPopup("SPBU.8")
+        .addTo(map);
+      var SPBU9 = L.marker([-5.407279534044237, 105.32008679392143, 5])
+        .bindPopup("SPBU.9")
+        .addTo(map);
+      var SPBU10 = L.marker([-5.381727868910611, 105.25845621366534, 5])
+        .bindPopup("SPBU.10")
+        .addTo(map);
+
+      L.tileLayer(
+        "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+        {
+          attribution:
+            'UTS SIG © <a href="https://github.com/BlackCrow98/-IF4036--UTS-SISTEM-INFORMASI-GEOGRAFIS.git">MRyanLaksmanaPutra14116108 </a>',
+          maxZoom: 18,
+          id: "mapbox/streets-v11",
+          tileSize: 512,
+          zoomOffset: -1,
+          accessToken:
+            "pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw",
+        }
+      ).addTo(map);
+    </script>
+  </body>
+</html>
